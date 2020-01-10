@@ -1,4 +1,6 @@
 var mysql = require('mysql');
+var Sequelize = require('sequelize');
+var db = new Sequelize('chat', 'student', 'student');
 
 // Create a database connection and export it from this file.
 // You will need to connect with the user "root", no password,
@@ -10,15 +12,16 @@ var connection = mysql.createConnection({
   password : 'student',
   database : 'chat'
 });
+// var User = db.define('users', {
+//   name: Sequelize.STRING
+// });
 
+
+// var Message = db.define('messages', {
+//   user_id: Sequelize.INTEGER,
+//   body: Sequelize.STRING,
+//   room_id: Sequelize.STRING
+// });
 module.exports = {
   connection
 };
-// // mysql input, input arguments, callback func
-// connection.query('SELECT body from messages', (err, results, fields) => {
-//   if (err) {
-//     console.log("ERROR querying database:", err);
-//   } else {
-//     console.log('results:', results);
-//   }
-// });
